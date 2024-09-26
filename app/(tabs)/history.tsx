@@ -3,7 +3,7 @@
 
 import ImageBackgroundWrapper from '@/components/Imagewrapper'
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
 // import { Picker } from '@react-native-picker/picker';
 import RNPickerSelect from 'react-native-picker-select';
 
@@ -14,6 +14,12 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { useRecoilState } from 'recoil';
 import { cryptoKeysAtom } from '@/store/publickeys';
 import QRCode from 'react-native-qrcode-svg';
+
+
+
+// Get the window dimensions
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 export default function Receive() {
   const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
@@ -27,6 +33,8 @@ export default function Receive() {
     //change chain string | also the publickey
     //change image 
     (() => {
+      console.log(windowWidth); 
+      console.log(windowHeight)
       if (chain == 'SOL') {
         setpubkey(cryptokeys.sol)
       } else {

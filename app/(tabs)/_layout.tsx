@@ -1,6 +1,8 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import styles from '@/constants/Styles/Styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 
@@ -12,13 +14,13 @@ export default function TabLayout() {
 const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
 
   return (
-    // <SafeAreaView style={styles.container}>
-// <ImageBackgroundWrapper image={image}> 
+    <SafeAreaView style={styles.container}>
+{/* // <ImageBackgroundWrapper image={image}>  */}
 
     <Tabs
       screenOptions={{
         // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: true,
+        headerShown: false,
         
       }}  >
       <Tabs.Screen
@@ -61,9 +63,9 @@ const image = require('../../assets/images/Mainbackground.png'); // Adjust the p
       />
     </Tabs>
   
-    // </ImageBackgroundWrapper> 
+    {/* // </ImageBackgroundWrapper>  */}
 
-    // </SafeAreaView>
+     </SafeAreaView>
   );
 }
 

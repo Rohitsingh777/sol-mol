@@ -1,19 +1,26 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+
+
+
+// import { Colors } from '@/constants/Colors';
+// import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+//   const colorScheme = useColorScheme();
+const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
 
   return (
+    // <SafeAreaView style={styles.container}>
+// <ImageBackgroundWrapper image={image}> 
+
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
+        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        headerShown: true,
+        
+      }}  >
       <Tabs.Screen
         name="index"
         options={{
@@ -24,14 +31,39 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="receive"
         options={{
-          title: 'Explore',
+          title: 'Receive',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          ),
+        }}
+      />
+
+    <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="send"
+        options={{
+          title: 'Send',
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
           ),
         }}
       />
     </Tabs>
+  
+    // </ImageBackgroundWrapper> 
+
+    // </SafeAreaView>
   );
 }
+

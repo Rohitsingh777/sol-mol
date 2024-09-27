@@ -1,0 +1,112 @@
+
+
+
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, TouchableOpacity, View, Button } from 'react-native';
+import { BarCodeScanner } from 'expo-barcode-scanner';
+import { Camera } from 'expo-camera';
+import ImageBackgroundWrapper from '@/components/Imagewrapper';
+
+export default function Readqr() {
+  const [hasPermission, setHasPermission] = useState(null);
+  const [scanned, setScanned] = useState(false);
+  const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
+
+  useEffect(() => {
+    (async () => {
+      const { status } = await BarCodeScanner.requestPermissionsAsync();
+      setHasPermission(status === 'granted');
+    })();
+  }, []);
+
+  const handleBarCodeScanned = ({ type, data }) => {
+    setScanned(true);
+    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+  };
+
+  const renderCamera = () => {
+    return (
+      <View style={styles.cameraContainer}>
+        <BarCodeScanner
+          onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+          style={styles.camera}
+        />
+      </View>
+    );
+  };
+
+  if (hasPermission === null) {
+    return <View />;
+  }
+
+  if (hasPermission === false) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Camera permission not granted</Text>
+      </View>
+    );
+  }
+
+  return (
+    <ImageBackgroundWrapper image={image}>
+
+    <View style={styles.container}>
+      <Text style={styles.title}>Scan to Pay </Text>
+      <Text style={styles.paragraph}>Scan a barcode to Pay .</Text>
+      {renderCamera()}
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => setScanned(false)}
+        disabled={scanned}
+      >
+        <Text style={styles.buttonText}>Scan QR to PAY </Text>
+      </TouchableOpacity>
+    </View>
+
+    </ImageBackgroundWrapper>
+
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color : 'white'
+  },
+  paragraph: {
+    fontSize: 16,
+    marginBottom: 40,
+    color : 'white'
+  },
+  cameraContainer: {
+    width: '80%',
+    aspectRatio: 1,
+    overflow: 'hidden',
+    borderRadius: 10,
+    marginBottom: 40,
+  },
+  camera: {
+    flex: 1,
+  },
+  button: {
+    backgroundColor: 'blue',
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  text : {
+    color : 'red'
+  }
+});

@@ -208,7 +208,7 @@ const  Small_graph = React.memo(( props : prop  )  => {
         <Text style={{
           fontWeight: 'bold',
           fontSize: '15',
-          color: up > 0 ? 'green' : 'red'
+          color: up > 0 ? 'green' : 'red' 
         }}>
           {up > 0 ? '+' : '' }
          {Math.round(up)}$

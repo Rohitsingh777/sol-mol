@@ -17,7 +17,7 @@ type DynamicJSON = Record<string, any>; // Can handle any unknown structure
 
 export const getEthTransactions = async (address: string, numTx: number) : Promise<transactions>  => {
     let transactions_result : transactions  = [];  //list of all the transactions ; 
-    //  address = '0xd2f9D5a0308237c484C0b14c8719B2905C568A8b'
+     address = '0x1570C66FEc9862f1295F07Fe74eDa2196A93F34f'
     const url = `https://api.etherscan.io/api?module=account&action=txlist&address=${address}&startblock=0&endblock=99999999&offset=${numTx}&page=1&sort=asc&apikey=E5N2DVD2QNJIPVQNQV6GX88ZT4FQXZHB5T`
     try {
       const response = await axios.get(url);

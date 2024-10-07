@@ -128,7 +128,18 @@ export default function History_onebox( props : prophistory  )  {
 
         }}>
           {data?.type ==  'send' ? '-' : '+'}
-          { data?.amount == undefined ? '0' : (data.amount/1000000000).toFixed(2).toString()}sol
+
+          {
+            chain == 'SOL' ? (data?.amount == undefined ? '0' : (data.amount/1000000000).toFixed(2).toString() ) 
+            :(
+              data?.amount?.toFixed(2).toString() 
+            ) 
+
+          }
+          {
+            chain == 'SOL'  ? ' Sol' : ' Eth'
+          }
+          {/* { data?.amount == undefined ? '0' : (data.amount/1000000000).toFixed(2).toString()}sol */}
         </Text>
         
         </View>

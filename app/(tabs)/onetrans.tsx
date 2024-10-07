@@ -11,7 +11,7 @@ import { transaction } from '@/hooks/Gettransactions/ethhistory';
 export default function Onetrans() {
     const { data , chain } = useLocalSearchParams();
     const Transdata  : transaction  = data ? JSON.parse(decodeURIComponent(data)) : {};
-
+    console.log(Transdata)
     const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
     const router = useRouter();
     var url: string;
@@ -99,7 +99,8 @@ export default function Onetrans() {
                     // backgroundColor : 'red', 
                     alignItems: 'center'
                 }}>
-                    <Text style={styles.amount} numberOfLines={1}>{Transdata.amount} Sol </Text>
+                    <Text style={styles.amount} numberOfLines={1}>
+                     { chain  == 'SOL' ? (`${Transdata?.amount / 1e9}`) : Transdata?.amount} {chain} </Text>
                 </View>
 
 
@@ -130,7 +131,7 @@ export default function Onetrans() {
                     height: 60
                 }}>
                     {
-                    Transdata.status == 'finalized' || 0  ? (
+                    Transdata.status == 'finalized' || '0'  ? (
                         <>
                         <AntDesign name="checkcircleo" size={28} color="white" />
                         <Text style={{
@@ -178,7 +179,8 @@ export default function Onetrans() {
                     // height  : windowHeight/3,
                     // margin : 20
                     borderRadius: 20,
-                    padding : 10
+                    padding : 10,
+                    marginBottom : 100
 
                 }}>
 
@@ -311,11 +313,6 @@ export default function Onetrans() {
 
     );
 }
-
-
-
-
-
 
 
 const styles = StyleSheet.create({

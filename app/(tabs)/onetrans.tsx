@@ -9,7 +9,7 @@ import { transaction } from '@/hooks/Gettransactions/ethhistory';
 
 
 export default function Onetrans() {
-    const { data } = useLocalSearchParams();
+    const { data , chain } = useLocalSearchParams();
     const Transdata  : transaction  = data ? JSON.parse(decodeURIComponent(data)) : {};
 
     const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
@@ -17,38 +17,36 @@ export default function Onetrans() {
     var url: string;
     var imgurl: string;
     const [datetime , setDatetime] = useState('')
-    //   const sol_url = 'https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=1';
-    //   const eth_url = 'https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=1';
-    //   const bit_url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1' ; 
-    //   const maker_url = 'https://api.coingecko.com/api/v3/coins/maker/market_chart?vs_currency=usd&days=1' ; 
+      const sol_url = 'https://api.coingecko.com/api/v3/coins/solana/market_chart?vs_currency=usd&days=1';
+      const eth_url = 'https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=1';
+      const bit_url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1' ; 
+      const maker_url = 'https://api.coingecko.com/api/v3/coins/maker/market_chart?vs_currency=usd&days=1' ; 
+      imgurl = 'https://img.icons8.com/?size=100&id=50284&format=png&color=000000'
 
-    imgurl = 'https://img.icons8.com/?size=100&id=50284&format=png&color=000000'
+      switch(chain){
+        case 'ETH' : {
+          url  = eth_url
+          imgurl = 'https://img.icons8.com/?size=100&id=50284&format=png&color=000000'
 
-    //   switch(chain){
-    //     case 'ETH' : {
-    //       url  = eth_url
-    //       imgurl = 'https://img.icons8.com/?size=100&id=50284&format=png&color=000000'
+          }
+          break ; 
+          case 'SOL' : {
+            url = sol_url ; 
+            imgurl  ='https://img.icons8.com/?size=100&id=icTiMgoOHSVy&format=png&color=000000'
+          }
+          break; 
+          case 'BIT' : {
+            url = bit_url ; 
+            imgurl = 'https://img.icons8.com/?size=100&id=63192&format=png&color=000000'
+          } 
+          break; 
+          case 'MAK' : {
+            url  = maker_url ; 
+            imgurl = 'https://img.icons8.com/?size=100&id=UARsSBUAXiHi&format=png&color=000000'
+          }
+        }
 
-    //       }
-    //       break ; 
-    //       case 'SOL' : {
-    //         url = sol_url ; 
-    //         imgurl  ='https://img.icons8.com/?size=100&id=icTiMgoOHSVy&format=png&color=000000'
-    //       }
-    //       break; 
-    //       case 'BIT' : {
-    //         url = bit_url ; 
-    //         imgurl = 'https://img.icons8.com/?size=100&id=63192&format=png&color=000000'
-    //       } 
-    //       break; 
-    //       case 'MAK' : {
-    //         url  = maker_url ; 
-    //         imgurl = 'https://img.icons8.com/?size=100&id=UARsSBUAXiHi&format=png&color=000000'
-    //       }
-
-    //     }
-
-    useEffect(() => {
+ useEffect(() => {
         console.log(`something came ` , `-`.repeat(Math.random() * 10))
         console.log(data)
 
@@ -207,8 +205,12 @@ export default function Onetrans() {
                         <Text style={{
                             fontWeight: '400',
                             fontSize: 20,
-                            color: '#FFFFFF'
-                        }} numberOfLines={1}> ETHERIUM  </Text>
+                            color: '#FFFFFF',
+                            marginLeft : 10
+                        }} numberOfLines={1}>
+                             
+                            {chain == 'ETH' ? 'ETHERIUM' : 'SOLANA' }
+                               </Text>
                     </View>
 
                     <View style={{

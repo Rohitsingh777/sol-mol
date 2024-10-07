@@ -63,7 +63,7 @@ export default function Receive() {
 
   const renderItem = ({ item }: { item: transaction }) => (
     <TouchableOpacity onPress={ ()=> router.push(
-      `/(tabs)/onetrans?data=${encodeURIComponent(JSON.stringify(item))}`
+      `/(tabs)/onetrans?data=${encodeURIComponent(JSON.stringify(item))}&chain=${chain.chain}`
     )}>
 
     <History_onebox chain={chain.chain} data={item} />

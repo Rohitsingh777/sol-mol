@@ -10,6 +10,8 @@ import { chainState } from '@/store/chain';
 import { transaction, transactions } from '@/hooks/Gettransactions/solhistory';
 import getTransactions from '@/hooks/getTransactions';
 import Notransactions from '@/components/Notransactions';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { router, useRouter } from 'expo-router';
 
 // Get the window dimensions
 const windowWidth = Dimensions.get('window').width;
@@ -25,6 +27,7 @@ export default function Receive() {
   const [transactions, setTransactions] = useState<transactions>([])
   const [refreshing, setRefreshing] = useState(false);
   const [key, setKey] = useState(0);
+  const router = useRouter(); 
 
   const getdata = async () => {
     setRefreshing(true)
@@ -59,7 +62,13 @@ export default function Receive() {
 
 
   const renderItem = ({ item }: { item: transaction }) => (
+    <TouchableOpacity onPress={ ()=> router.push(
+      `/(tabs)/onetrans?data=${encodeURIComponent(JSON.stringify(item))}`
+    )}>
+
     <History_onebox chain={chain.chain} data={item} />
+
+    </TouchableOpacity>
   );
 
   return (

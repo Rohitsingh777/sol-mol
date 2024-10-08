@@ -62,7 +62,6 @@ const generateMnemonic = async () => {
     SOL : solKeys
   }
   const stringkey = JSON.stringify(keys) ; 
-
   await SecureStore.setItemAsync('ACC0', stringkey );
 
 } 

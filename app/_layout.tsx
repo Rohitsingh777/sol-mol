@@ -32,7 +32,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
 import React from 'react';
-import { isLabeledStatement } from 'typescript';
 
 
 
@@ -70,9 +69,7 @@ return (
     // <View style={styles.container}>
     <RecoilRoot>
     <GestureHandlerRootView style={{ flex: 1 }}>
-
     <ImageBackground source={image} style={styles.image}>
-
     <Stack>
 
       <Stack.Screen name="index"  />
@@ -92,8 +89,13 @@ return (
         title : 'Send via PublicKey' ,
         headerTintColor : 'black' ,
        }}  />
-
        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+       <Stack.Screen name="/settings/About" options={{ headerShown: false }} />
+       <Stack.Screen name="/settings/Activenetwork" options={{ headerShown: false }} />
+       <Stack.Screen name="/settings/ManageAccount" options={{ headerShown: false }} />
+       <Stack.Screen name="/settings/OneAccountSettings" options={{ headerShown: false }} />
+       <Stack.Screen name="/settings/Showprivkey" options={{ headerShown: false }} />
+       <Stack.Screen name="/settings/ShowPhrase" options={{ headerShown: false }} />
 
     </Stack>
     </ImageBackground>

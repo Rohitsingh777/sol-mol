@@ -21,7 +21,7 @@ export const getSolTransactions = async (
   numTx: number
 ): Promise<transactions> => {
   let transactions_result: transactions = []; //list of all the transactions ;
-  
+
   const pubKey =  new solanaWeb3.PublicKey(address);
   let transactionList = await solanaConnection.getSignaturesForAddress(pubKey, {
     limit: numTx
@@ -39,8 +39,7 @@ export const getSolTransactions = async (
     // console.log(JSON.stringify(transaction))
     const date = new Date(transaction.blockTime * 1000);
     trans_end = { ...trans_end, date };
-    const transactionInstructions =
-      transactionDetails[i].transaction.message.instructions;
+    const transactionInstructions = transactionDetails[i].transaction.message.instructions;
 
     // console.log(`Transaction No: ${i + 1}`);
     // console.log(`Signature: ${transaction.signature}`);
@@ -62,11 +61,8 @@ export const getSolTransactions = async (
           } else {
             trans_end = { ...trans_end, type: "receive" };
           }
-          // console.log(`---Instruction ${n + 1}: Program ID: ${instruction.programId}`);
-          // console.log(`Sender ----- ${instruction.parsed.info.source}`)
-          // console.log(`Receiver ----- ${instruction.parsed.info.destination}`)
-          // console.log(`Amount  ----- ${instruction.parsed.info.lamports / 1000000000 }  `)
-        } catch {
+        }
+         catch {
           const sender = undefined;
           const receiver = undefined;
           const amount = undefined;

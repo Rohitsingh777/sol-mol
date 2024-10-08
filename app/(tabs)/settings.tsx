@@ -1,16 +1,17 @@
-import { View, Text, SafeAreaView, Platform, Image } from 'react-native'
-import React, { useRef } from 'react'
+import { View, Text, SafeAreaView, Platform, Image, TouchableOpacity } from 'react-native'
+import React, {  } from 'react'
 import ImageBackgroundWrapper from '@/components/Imagewrapper'
 import styles from '@/constants/Styles/Styles';
 import { windowWidth } from '@/constants/Dimenstions';
-import Icon from 'react-native-vector-icons/AntDesign'; // Import specific icon set
+import { Settingslayout } from '@/constants/settingslayou';
+import SettingsBox from '@/components/SettingsBox';
 
 
 
 export default function settings() {
   const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
   const imgurl = 'https://img.icons8.com/?size=100&id=50284&format=png&color=000000'
-      
+
   return (  
     <ImageBackgroundWrapper image={image}>
 
@@ -21,8 +22,8 @@ export default function settings() {
         alignContent: 'center',
         alignItems: 'center',
         overflow: 'hidden' , 
-        padding : 17 , 
-        backgroundColor : 'red', 
+        padding : 0 , 
+        // backgroundColor : 'red', 
         width : windowWidth , 
       }}>
 
@@ -32,9 +33,11 @@ export default function settings() {
        Settings 
      </Text>
 
+{/* 
 
-
-      
+<TouchableOpacity onPress={()=>{
+  alert('something')
+}}>
 <View style={ {...styles.transaction , width : '100%' ,height : 80 }}>
     <View style={{
       height : '100%' ,
@@ -53,9 +56,7 @@ export default function settings() {
       }}>
 
         <Image
-          // source={require('../assets/images/solicon.png')}
           source={{uri : imgurl  }}
-          // style={styles.image}
           style={{
             height : 35 ,
             width : 35
@@ -85,25 +86,20 @@ export default function settings() {
         <View style={{
             alignItems : 'center' , 
             justifyContent : 'center' , 
-            // backgroundColor : 'red', 
             flex : 1, 
             height : '100%'
         }}>
-
-      {/* <ion-icon name="chevron-forward-outline"></ion-icon>
-       */}
-            <Icon name="right" size={40} color="grey" />
-
+           <FontAwesome name="angle-right" size={40} color="white" />
         </View>
       </View>   
-
-
     </View>
 </View>
+</TouchableOpacity> 
 
 
+ */}
 
-     <View style={{
+     {/* <View style={{
       marginTop : 20 , 
       backgroundColor : '#222121'
      }}>
@@ -123,7 +119,9 @@ export default function settings() {
      }}>
        Account 1  
      </Text>
-     </View><View style={{
+
+     </View>
+     <View style={{
       marginTop : 20 , 
       backgroundColor : '#222121'
      }}>
@@ -132,18 +130,26 @@ export default function settings() {
      }}>
        Account 1  
      </Text>
-     </View>
+     </View> */}
 
-
+     <View style={{
+      // backgroundColor : 'red', 
+      width : windowWidth , 
+      padding : 10,
+      gap : 0
+     }}>
+    
+      {Settingslayout.map((prop ,index ) =>{
+        return(
+          <SettingsBox  {...prop}
+          />
+        )
+      })}
+     
+    </View>
 
 
       </View>
-
-
-
-
-
-
     </SafeAreaView>
 
   </ImageBackgroundWrapper>

@@ -38,7 +38,7 @@ export const Accountinfolayout1: settingboxprops[] = [
   {
     icon: PlayCircleIcon,
     text: "Account Name ",
-    onclickpath: "/settings/About",
+    // onclickpath: "/settings/About",
     borderBottomW: 1,
     endarrow: true,
     righttext : 'Account 1'
@@ -46,7 +46,7 @@ export const Accountinfolayout1: settingboxprops[] = [
   {
     icon: PlayCircleIcon,
     text: "Account Addresses ",
-    onclickpath: "/settings/About",
+    // onclickpath: "/settings/About",
     borderBottomW: 1,
     endarrow: true ,
     righttext : '2'

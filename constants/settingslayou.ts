@@ -80,3 +80,27 @@ export const Accountinfolayout2: settingboxprops[] = [
 ];
 
 
+
+
+
+
+
+
+export const Activenetworkprops: settingboxprops[] = [
+    {
+      icon: PlayCircleIcon,
+      text: "SOLANA",
+    //   onclickpath: "/settings/ManageAccount",
+      borderBottomW: 5,
+      endarrow: false ,
+      topradius : 30 , 
+    },
+    {
+      icon: PlayCircleIcon,
+      text: "ETHERIUM",
+    //   onclickpath: "/settings/Activenetwork",
+    //   borderBottomW: 1,
+      endarrow: false,
+      bottomradius : 30 
+    }
+  ];

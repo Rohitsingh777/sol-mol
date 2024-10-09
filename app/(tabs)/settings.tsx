@@ -27,8 +27,9 @@ export default function settings() {
         width : windowWidth , 
       }}>
 
-     <Text style={{color : 'white' , fontSize : 20 , fontWeight : '500' , 
-      marginTop : 20 
+     <Text style={{color : 'white' , fontSize : 25 , fontWeight : 'bold' , 
+      marginTop : 20 , 
+      marginBottom : 50
      }}>
        Settings 
      </Text>
@@ -141,8 +142,7 @@ export default function settings() {
     
       {Settingslayout.map((prop ,index ) =>{
         return(
-          <SettingsBox  {...prop}
-          />
+          <SettingsBox  {...prop} key={index}/>
         )
       })}
      

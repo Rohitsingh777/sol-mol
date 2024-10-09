@@ -21,13 +21,15 @@ export type settingboxprops = {
     borderBottomColor?: ColorValue,
     endarrow: boolean,
     radius?: number,
-    righttext?: string
+    righttext?: string , 
+    topradius? : number , 
+    bottomradius? : number
 }
 export default function SettingsBox(props: settingboxprops) {
     const router = useRouter()
     const { height, width, icon: Icon, text, onclickpath,
         borderBottomColor, borderBottomW, endarrow,
-        radius, righttext } = props;
+        radius, righttext , topradius , bottomradius } = props;
 
     return (
 
@@ -45,8 +47,9 @@ export default function SettingsBox(props: settingboxprops) {
                 ...styles.transaction,
                 margin: 0,
                 width: width ?? '100%',
-                height: height ?? 80
-            }}>
+                height: height ?? 80, 
+               borderRadius : 20            
+            }}> 
 
                 <View style={{
                     
@@ -58,7 +61,12 @@ export default function SettingsBox(props: settingboxprops) {
                     width: '100%',
                     justifyContent: 'center',
                     borderBottomColor: borderBottomColor ?? '#FFFFFF30',
-                    borderBottomWidth: borderBottomW ?? 0
+                    borderBottomWidth: borderBottomW ?? 0, 
+                    borderTopLeftRadius : topradius ?? 0 , 
+                    borderTopRightRadius : topradius ?? 0 , 
+                    borderBottomLeftRadius : bottomradius ?? 0 ,
+                    borderBottomRightRadius : bottomradius ?? 0 ,
+                    
                 }}>
 
 

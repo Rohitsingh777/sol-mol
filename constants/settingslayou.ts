@@ -8,6 +8,7 @@ export const Settingslayout: settingboxprops[] = [
     onclickpath: "/settings/ManageAccount",
     borderBottomW: 1,
     endarrow: true,
+    topradius : 30 , 
   },
   {
     icon: PlayCircleIcon,
@@ -21,6 +22,7 @@ export const Settingslayout: settingboxprops[] = [
     text: "About",
     onclickpath: "/settings/About",
     endarrow: true,
+    bottomradius : 30,
   },
 ];
 
@@ -31,6 +33,8 @@ export const ManageAccountlayout: settingboxprops[] = [
     onclickpath: "/settings/OneAccountSettings",
     // borderBottomW: 1
     endarrow: true,
+    bottomradius : 30, 
+    topradius : 30
   },
 ];
 
@@ -41,15 +45,17 @@ export const Accountinfolayout1: settingboxprops[] = [
     // onclickpath: "/settings/About",
     borderBottomW: 1,
     endarrow: true,
-    righttext : 'Account 1'
+    righttext : 'Account 1' ,
+    topradius : 30 ,
   },
   {
     icon: PlayCircleIcon,
     text: "Account Addresses ",
     // onclickpath: "/settings/About",
-    borderBottomW: 1,
+    // borderBottomW: 1,
     endarrow: true ,
-    righttext : '2'
+    righttext : '2',
+    bottomradius : 30
   },
 ];
 
@@ -60,14 +66,16 @@ export const Accountinfolayout2: settingboxprops[] = [
     onclickpath: "/settings/ShowPhrase",
     borderBottomW: 1,
     endarrow: true,
+    topradius : 30
     
   },
   {
     icon: PlayCircleIcon,
     text: "Show Privet Key",
     onclickpath: "/settings/Showprivkey",
-    borderBottomW: 1,
+    // borderBottomW: 1,
     endarrow: false,
+    bottomradius : 30
   },
 ];
 

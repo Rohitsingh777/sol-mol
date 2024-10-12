@@ -91,7 +91,7 @@ return (
        }}  />
        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
        <Stack.Screen name="/settings/About" options={{ headerShown: false }} />
-       <Stack.Screen name="/settings/Activenetwork" options={{ headerShown: false }} />
+       <Stack.Screen name="/settings/Activenetwork" options={{ headerShown: true }} />
        <Stack.Screen name="/settings/ManageAccount" options={{ headerShown: false }} />
        <Stack.Screen name="/settings/OneAccountSettings" options={{ headerShown: false }} />
        <Stack.Screen name="/settings/Showprivkey" options={{ headerShown: false }} />

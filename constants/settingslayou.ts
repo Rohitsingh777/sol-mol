@@ -4,14 +4,15 @@
 
 
 import { settingboxprops } from "@/components/SettingsBox";
-import { PlayCircleIcon, RatIcon ,  BadgeInfo ,Network ,Contact  
-    ,Baseline ,Tally2  ,VenetianMask ,Asterisk   } from "lucide-react-native";
+import { UserCog, RatIcon ,  BadgeInfo ,Network ,Contact  
+    ,Baseline ,Tally2  ,VenetianMask ,Asterisk,   
+    PlayCircleIcon} from "lucide-react-native";
 
 
 
 export const Settingslayout: settingboxprops[] = [
   {
-    icon: PlayCircleIcon,
+    icon: UserCog,
     text: "Manage Account",
     onclickpath: "/settings/ManageAccount",
     borderBottomW: 1,
@@ -37,7 +38,7 @@ export const Settingslayout: settingboxprops[] = [
 export const ManageAccountlayout: settingboxprops[] = [
   {
     icon: Contact,
-    text: "ACCOUNT 0",
+    text: "ACCOUNT 1",
     onclickpath: "/settings/OneAccountSettings",
     // borderBottomW: 1
     endarrow: true,

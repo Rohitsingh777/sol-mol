@@ -43,12 +43,14 @@ export default function SettingsBox(props: settingboxprops) {
             onPress={() => {
                 onclickpath && router.push(onclickpath)
             }}>
+
+
             <View style={{
                 ...styles.transaction,
                 margin: 0,
                 width: width ?? '100%',
                 height: height ?? 80, 
-               borderRadius : 20            
+               borderRadius : 20    ,         
             }}> 
 
                 <View style={{
@@ -83,9 +85,10 @@ export default function SettingsBox(props: settingboxprops) {
                         }}>
                             
                         <Icon color={'white'} />
+
                         <View style={{
                             overflow: 'hidden',
-                            paddingLeft: 5
+                            paddingLeft: 10
                         }}>
 
                             <Text
@@ -118,7 +121,7 @@ export default function SettingsBox(props: settingboxprops) {
                                 )
                             }
 
-                            {endarrow && (<FontAwesome name="angle-right" size={30} color="white" />)}
+                            {endarrow && (<FontAwesome name="angle-right" size={30} color="#B3B3B3" />)}
 
                         </View>
 

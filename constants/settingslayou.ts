@@ -1,5 +1,13 @@
+
+
+
+
+
 import { settingboxprops } from "@/components/SettingsBox";
-import { PlayCircleIcon, RatIcon } from "lucide-react-native";
+import { PlayCircleIcon, RatIcon ,  BadgeInfo ,Network ,Contact  
+    ,Baseline ,Tally2  ,VenetianMask ,Asterisk   } from "lucide-react-native";
+
+
 
 export const Settingslayout: settingboxprops[] = [
   {
@@ -11,14 +19,14 @@ export const Settingslayout: settingboxprops[] = [
     topradius : 30 , 
   },
   {
-    icon: PlayCircleIcon,
+    icon: Network,
     text: "Active Networks",
     onclickpath: "/settings/Activenetwork",
     borderBottomW: 1,
     endarrow: true,
   },
   {
-    icon: RatIcon,
+    icon: BadgeInfo, 
     text: "About",
     onclickpath: "/settings/About",
     endarrow: true,
@@ -28,8 +36,8 @@ export const Settingslayout: settingboxprops[] = [
 
 export const ManageAccountlayout: settingboxprops[] = [
   {
-    icon: PlayCircleIcon,
-    text: "Manage Account",
+    icon: Contact,
+    text: "ACCOUNT 0",
     onclickpath: "/settings/OneAccountSettings",
     // borderBottomW: 1
     endarrow: true,
@@ -40,20 +48,20 @@ export const ManageAccountlayout: settingboxprops[] = [
 
 export const Accountinfolayout1: settingboxprops[] = [
   {
-    icon: PlayCircleIcon,
+    icon: Baseline,
     text: "Account Name ",
     // onclickpath: "/settings/About",
     borderBottomW: 1,
-    endarrow: true,
+    endarrow: false,
     righttext : 'Account 1' ,
     topradius : 30 ,
   },
   {
-    icon: PlayCircleIcon,
+    icon: Tally2,
     text: "Account Addresses ",
     // onclickpath: "/settings/About",
     // borderBottomW: 1,
-    endarrow: true ,
+    endarrow: false ,
     righttext : '2',
     bottomradius : 30
   },
@@ -61,7 +69,7 @@ export const Accountinfolayout1: settingboxprops[] = [
 
 export const Accountinfolayout2: settingboxprops[] = [
   {
-    icon: PlayCircleIcon,
+    icon: VenetianMask,
     text: "Show Secret Phrase ",
     onclickpath: "/settings/ShowPhrase",
     borderBottomW: 1,
@@ -70,11 +78,11 @@ export const Accountinfolayout2: settingboxprops[] = [
     
   },
   {
-    icon: PlayCircleIcon,
+    icon: Asterisk,
     text: "Show Privet Key",
     onclickpath: "/settings/Showprivkey",
     // borderBottomW: 1,
-    endarrow: false,
+    endarrow: true ,
     bottomradius : 30
   },
 ];

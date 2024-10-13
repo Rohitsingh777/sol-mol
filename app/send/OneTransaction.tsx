@@ -1,9 +1,12 @@
+
+
+
+
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View, Button, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import ImageBackgroundWrapper from '@/components/Imagewrapper';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { prophistory } from '@/components/historybox';
-import { windowHeight, windowWidth } from '@/constants/Dimenstions';
+import { windowWidth } from '@/constants/Dimenstions';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { transaction } from '@/hooks/Gettransactions/ethhistory';
 
@@ -76,11 +79,8 @@ export default function Onetrans() {
                 showsVerticalScrollIndicator={false}
                 style={{
                     paddingTop: 100
-                }}
-
-            >
+                }}>
                 <View style={styles.container}>
-
                     <Image
                         source={{ uri: imgurl }}
                         style={{
@@ -229,11 +229,11 @@ export default function Onetrans() {
                             gap: 5
                         }}>
 
-                        <Text style={{
+                            <Text style={{
                                 fontWeight: '400',
                                 fontSize: 16,
                                 color: '#FFFFFF'
-                        }} numberOfLines={1}> Transaction Signature  </Text>
+                            }} numberOfLines={1}> Transaction Signature  </Text>
 
                             <Text style={{
                                 fontWeight: '400',

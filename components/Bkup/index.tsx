@@ -11,13 +11,12 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>#####  LELE MERA </Text>
+      <Text>##### WELCOME TO THE APP </Text>
       <Link href='/start' style={{
         color : 'blue'
       }}> start page </Link>
-
-
-
     </View>
+
+
   );
 }

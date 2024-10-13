@@ -82,7 +82,7 @@ export default function Readqr() {
 
         <TouchableOpacity
           style={styles.button}
-          onPress={() => router.push('/sendviaid/')}
+          onPress={() => router.push('/sendviaid')}
           disabled={scanned}
         >
           <Text style={styles.buttonText}> Send via @publickey instead </Text>

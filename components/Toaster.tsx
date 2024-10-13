@@ -18,7 +18,10 @@ export default function  UseToast( params : toastparam  ) : void {
           type:  status  , 
           text1: Title  ,
           text2:  Text ,
-          position :  position 
+          position :  position ,
+          visibilityTime : 2000 , 
+          topOffset : 100 ,
+          bottomOffset : 100
         });
       };
       showToast(); 

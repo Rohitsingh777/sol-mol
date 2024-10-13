@@ -32,7 +32,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
 import React from 'react';
-import { Icon } from 'lucide-react-native';
 import Toast from 'react-native-toast-message';
 
 
@@ -51,7 +50,7 @@ useEffect(()=>{
 // });
     const keys = await SecureStore.getItemAsync('ACC0')
 
-if (keys != null) {
+if ( keys != null) {
   // console.log(`printing object `)
   // console.log(keys)
   // const key = JSON.parse(keys)
@@ -59,6 +58,8 @@ if (keys != null) {
   // const sol = key['SOL'].publicKey
   // const eth = key['ETH'].publicKdey
     router.push('/(tabs)')
+}else{
+  router.push('/start') 
 }
   })()
 
@@ -74,7 +75,7 @@ return (
     <ImageBackground source={image} style={styles.image}>
     <Stack>
 
-      <Stack.Screen name="index"  />
+      {/* <Stack.Screen name="index"  /> */}
       <Stack.Screen name="start" 
          options={{
           headerShown: false ,
@@ -94,9 +95,9 @@ return (
        <Stack.Screen name="sendviaid"
        options={{
         headerShown: true ,
-        headerBackTitleVisible: true,
-        title : 'Send via PublicKey' ,
-        headerTintColor : 'white' ,
+        headerBackTitleVisible: false,
+        title : '' ,
+        headerTintColor : 'black' ,
         headerTransparent : true , 
 
        }}  />
@@ -143,7 +144,13 @@ return (
           headerTransparent: true, // Makes the header transparent
           headerTintColor: 'black', // The arrow color
         }} />
-
+       <Stack.Screen name="send/OneTransaction" options={{ 
+          headerShown: true,
+          headerBackTitleVisible: false, // Hides the "back" text
+          headerTitle: '', // Removes the title text
+          headerTransparent: true, // Makes the header transparent
+          headerTintColor: 'black', // The arrow color
+        }} />
     </Stack>
     <Toast />
     </ImageBackground>

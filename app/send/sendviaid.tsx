@@ -31,7 +31,7 @@ export default function SendviapubId() {
         let id: string | undefined | void = 'Failed';
 
         console.log(`keY : ${pubkey}  
-        amount : ${amount} , from ${cryptokeys.sol} `)
+        amount : ${amount} , from ${cryptokeys.sol}`)
         console.log(privkey, pubkey, amount)
 
 
@@ -63,9 +63,6 @@ export default function SendviapubId() {
                 console.log(`Error occured `)
             }
         }
-
-
-
     }
     const cancelaction = () => {
         router.push('/(tabs)')
@@ -98,12 +95,6 @@ export default function SendviapubId() {
                 const pk = key[chain.chain].privateKey;
 
                 setPrivkey(pk);
-                // const solbal = await getSolanaBalance_dev(sol, 'SOL');
-                // console.log(solbal)
-                //   if (solbal != null) {
-                //     setsol_bal(Math.floor(solbal / 1000000000))
-                //   }
-
             }
         }
         sendsomething();

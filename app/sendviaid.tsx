@@ -25,6 +25,10 @@ export default function SendviapubId() {
     const [img, setimg] = useState<string>('../../assets/images/solicon.png')
     //   const [pubkey, setpubkey] = useState(cryptokeys.sol)
     const [chain, setchain] = useRecoilState(chainState)
+    const [pubkey, setPubkey] = useRecoilState(receiverspublickey);
+    const [amount, setAmount] = useState('');
+    const [privkey, setPrivkey] = useState('');
+
     const router = useRouter();
 
     const sendchain = async () => {
@@ -50,30 +54,46 @@ export default function SendviapubId() {
                 position: 'bottom',
                 status: id ? (id.includes("Failed") ? 'error' : 'success') : 'error'
             })
-
+            
+            setPrivkey('') ;
+            setPubkey('') ; 
+            setAmount('')
 
         }
         else {
             if (!pubkey) {
                 console.log(`kindly enter pubkey`)
+                    UseToast({
+                        Title : 'Error' , 
+                        Text : 'kindly enter Proper Public ID ' , 
+                        position : 'top' , 
+                        status : 'error' ,
+                    })
             } else if (!amount) {
                 console.log(`kindly enter amount `)
+                UseToast({
+                    Title : 'Error' , 
+                    Text : 'Kindly enter Proper Amount' , 
+                    position : 'top' , 
+                    status : 'error' ,
+                })
             }
             else {
                 console.log(`Error occured `)
+                UseToast({
+                    Title : 'Error' , 
+                    Text : 'Error occured while doing your transaction' , 
+                    position : 'top' , 
+                    status : 'error' ,
+                })
             }
         }
-
-
+       
 
     }
     const cancelaction = () => {
         router.push('/(tabs)')
     }
-    const [pubkey, setPubkey] = useRecoilState(receiverspublickey);
-    const [amount, setAmount] = useState('');
-    const [privkey, setPrivkey] = useState('');
-
 
 
     const handleInputChange = (text: string) => {
@@ -121,7 +141,7 @@ export default function SendviapubId() {
                 {/* picker over herer  */}
                 <View style={{
                     position: 'absolute',
-                    top: 150
+                    top: 200
                 }}>
                     <Pickchain />
                 </View>
@@ -154,8 +174,8 @@ export default function SendviapubId() {
 
 
                 <View style={styles.bottom}>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText} onPress={sendchain}>Send</Text>
+                    <TouchableOpacity style={styles.button} onPress={sendchain} >
+                        <Text style={styles.buttonText} >Send</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.button} onPress={cancelaction}>
                         <Text style={styles.buttonText}>Cancel</Text>
@@ -210,7 +230,7 @@ const styles = StyleSheet.create({
     },
     bottom: {
         position: 'absolute',
-        bottom: 0,    // Stick to the bottom of the screen
+        bottom: 20,    // Stick to the bottom of the screen
         left: 0,
         right: 0,
         flexDirection: 'row',
@@ -223,7 +243,7 @@ const styles = StyleSheet.create({
     },
     title: {
         position: 'absolute',
-        top: 100,    // Stick to the bottom of the screen 
+        top: 150,   
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,

@@ -18,7 +18,7 @@ import { SplineIcon } from 'lucide-react-native';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function Receive() {
+export default function History() {
   const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
   const [cryptokeys, setcryptokeys] = useRecoilState(cryptoKeysAtom)
   const [chain, setchain] = useRecoilState(chainState)
@@ -62,7 +62,7 @@ export default function Receive() {
 
   const renderItem = ({ item }: { item: transaction }) => (
     <TouchableOpacity onPress={ ()=> router.push(
-      `/(tabs)/onetrans?data=${encodeURIComponent(JSON.stringify(item))}&chain=${chain.chain}`
+      `/send/OneTransaction?data=${encodeURIComponent(JSON.stringify(item))}&chain=${chain.chain}`
     )}>
 
     <History_onebox chain={chain.chain} data={item} />

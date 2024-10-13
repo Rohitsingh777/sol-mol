@@ -33,6 +33,7 @@ import { useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
 import React from 'react';
 import { Icon } from 'lucide-react-native';
+import Toast from 'react-native-toast-message';
 
 
 
@@ -95,7 +96,9 @@ return (
         headerShown: true ,
         headerBackTitleVisible: true,
         title : 'Send via PublicKey' ,
-        headerTintColor : 'black' ,
+        headerTintColor : 'white' ,
+        headerTransparent : true , 
+
        }}  />
        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
        <Stack.Screen name="settings/About" options={{
@@ -142,9 +145,8 @@ return (
         }} />
 
     </Stack>
+    <Toast />
     </ImageBackground>
-
-
     </GestureHandlerRootView>
     </RecoilRoot>
 

@@ -2,6 +2,8 @@
 
 import { Keypair, Connection, clusterApiUrl, LAMPORTS_PER_SOL, Transaction, SystemProgram, PublicKey } from '@solana/web3.js';
 import * as ethers from 'ethers';
+import { err } from 'react-native-svg';
+import Toast from 'react-native-toast-message';
 
 // Function to convert hex string to Uint8Array
 const hexToUint8Array = (hex: string): Uint8Array => {
@@ -12,7 +14,7 @@ export const sendSol = async (
   fromSecretKeyHex: string,  // Sender's private key in hex string format
   toPublicKey: string,       // Receiver's public address
   amountInSol: number        // Amount of SOL to send
-): Promise<string | undefined> => {
+): Promise<string | undefined > => {
   try {
     // Convert the hex string private key to Uint8Array
     const fromSecretKey: Uint8Array = hexToUint8Array(fromSecretKeyHex);
@@ -27,7 +29,7 @@ export const sendSol = async (
     const toPublicKeyAddress: PublicKey = new PublicKey(toPublicKey);
 
     // Calculate the amount in lamports
-    const amountInLamports = amountInSol * LAMPORTS_PER_SOL;
+    const amountInLamports = amountInSol * LAMPORTS_PER_SOL ;
 
     // Create a transaction to transfer SOL
     const transaction = new Transaction().add(
@@ -45,9 +47,16 @@ export const sendSol = async (
     console.log(`Transaction successful with signature: ${signature}`);
     return signature;
   } catch (error) {
-    console.error('Transaction failed:', error);
+      console.log(error) ;
+    let x = 'Failed: ' +  error  ; 
+    return x ;
   }
 };
+
+
+
+
+
 
 
 export const sendEth =  async ( 

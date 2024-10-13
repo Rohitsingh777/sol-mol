@@ -19,7 +19,7 @@ import UseToast from '@/components/Toaster';
 
 export default function SendviapubId() {
 
-    const image = require('../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
+    const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
     const [cryptokeys, setcryptokeys] = useRecoilState(cryptoKeysAtom)
     // const [chain, setchain] = useState<string>("SOL");
     const [img, setimg] = useState<string>('../../assets/images/solicon.png')
@@ -73,8 +73,6 @@ export default function SendviapubId() {
     const [pubkey, setPubkey] = useRecoilState(receiverspublickey);
     const [amount, setAmount] = useState('');
     const [privkey, setPrivkey] = useState('');
-
-
 
     const handleInputChange = (text: string) => {
         // Allow only numbers

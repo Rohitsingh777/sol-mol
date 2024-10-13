@@ -5,8 +5,12 @@ import * as SecureStore from 'expo-secure-store';
 import { addSyntheticLeadingComment } from 'typescript';
 import { useNavigation, useRouter } from 'expo-router';
 import { deriveKeys } from '@/hooks/useCreatekeys';
+import { Mnemonicbox } from '@/components/mnemonic';
+import ImageBackgroundWrapper from '@/components/Imagewrapper';
 
 export default function createwallet() {
+const image = require('../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
+
 const [mnemonic, setMnemonic] = useState('');
 const [spinner, setspinner ] = useState(false)
 const [mnemonicarr , setmnemonicarr] = useState<string[]>([])
@@ -43,7 +47,7 @@ const generateMnemonic = async () => {
 };
 
   async function saveandgoahead(){
-
+    
   alert(`You confirm that that you have saved this Mneumonic string ${mnemonic}` );
   await SecureStore.setItemAsync('mnemonic', mnemonic);
   const currentIndex = 0; // Example index
@@ -53,16 +57,15 @@ const generateMnemonic = async () => {
 
   const ethKeys = await deriveKeys(mnemonic, 'ETH', currentIndex);
   console.log('Ethereum Keys:', ethKeys);
-
   const solKeys = await deriveKeys(mnemonic, 'SOL', currentIndex);
   console.log('Solana Keys:', solKeys);
-
   const keys   = {
     ETH : ethKeys , 
     SOL : solKeys
   }
   const stringkey = JSON.stringify(keys) ; 
   await SecureStore.setItemAsync('ACC0', stringkey );
+  router.push('/(tabs)')
 
 } 
 
@@ -88,12 +91,13 @@ async function see(){
 }
 
 return (
-  <View style={styles.container}>
-    <Text style={styles.title}>Generated Mnemonic:</Text>
-    {spinner ? <ActivityIndicator size="small" color="#0000ff" />  : <></> }
-    {/* <Text style={styles.mnemonic}>{mnemonic}</Text> */}
+  <ImageBackgroundWrapper image={image}>
+  {/* <View style={styles.container}> */}
+    {/* <Text style={styles.title}>Generated Mnemonic:</Text> */}
+    {/* { spinner ? <ActivityIndicator size="small" color="#0000ff" />  : <></> } */}
 
-    <View style={styles.mnemonicbox}>
+    {/* <Text style={styles.mnemonic}>{mnemonic}</Text> */}
+    {/* <View style={styles.mnemonicbox}>
     {mnemonicarr.map((str ,index )=>{
       return(
         <View style={styles.mnemonictextbox} key={index}>
@@ -105,12 +109,19 @@ return (
         </View>
       )
     })}
-    </View>
-    <Button title="Generate New Mnemonic" onPress={generateMnemonic} />
-    <Button title="Saved it move ahead " onPress={saveandgoahead} />
-    <Button title="see " onPress={see} />
+    </View> */}
+    {/* <View> */}
+      
+    <Mnemonicbox mnemonic={mnemonic} menmonicbottom={true} onContinue={saveandgoahead} />
+    {/* </View> */}
 
-  </View>
+    <Button title="Generate New Mnemonic" onPress={generateMnemonic} />
+    {/* <Button title="Saved it move ahead " onPress={saveandgoahead} /> */}
+    {/* <Button title="see " onPress={see} /> */}
+
+  {/* </View> */}
+
+ </ImageBackgroundWrapper>
 
 );
 
@@ -121,10 +132,11 @@ return (
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 20,
+      // flex: 1,
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      // padding: 20,
+
     },
     title: {
       fontSize: 20,

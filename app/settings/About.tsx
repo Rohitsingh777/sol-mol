@@ -6,7 +6,7 @@ import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 
 const AboutPage = () => {
   return (
-    <View style={{...styles.container , padding: 0 }}>
+    <View style={{...styles.container , padding: 0 , paddingTop : 60 }}>
     <ScrollView contentContainerStyle={styles.container}>
       {/* App logo or image */}
       <Image

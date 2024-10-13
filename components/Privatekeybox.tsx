@@ -43,8 +43,8 @@ export default function Privatekeybox(props: privetkeyboxprop ) {
 
 const $imglogo: ImageStyle = {
     resizeMode: 'cover',
-    height: 60,
-    width: 60, 
+    height: 35,
+    width: 35, 
 }
 const $keystring: TextStyle = {
     flex: 1,
@@ -64,7 +64,7 @@ const $heading: TextStyle = {
 
 const $box: ViewStyle = {
     padding: 10,
-    flexDirection: 'row',
+    flexDirection: 'column',
     height: 120,
     width: '100%',
     backgroundColor: 'black',

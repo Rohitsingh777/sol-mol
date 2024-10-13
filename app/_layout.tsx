@@ -32,6 +32,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
 import React from 'react';
+import { Icon } from 'lucide-react-native';
 
 
 
@@ -81,7 +82,14 @@ return (
           headerTintColor : 'black' 
          }} 
        />
-       <Stack.Screen name="createwallet" />
+       <Stack.Screen name="createwallet"   options={{
+        headerShown: true,
+        headerBackTitleVisible: false, // Hides the "back" text
+        headerTitle: '', // Removes the title text
+        headerTransparent: true, // Makes the header transparent
+        headerTintColor: 'black', // The arrow color
+       }}
+       />
        <Stack.Screen name="sendviaid"
        options={{
         headerShown: true ,
@@ -90,12 +98,48 @@ return (
         headerTintColor : 'black' ,
        }}  />
        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-       <Stack.Screen name="/settings/About" options={{ headerShown: false }} />
-       <Stack.Screen name="/settings/Activenetwork" options={{ headerShown: true }} />
-       <Stack.Screen name="/settings/ManageAccount" options={{ headerShown: false }} />
-       <Stack.Screen name="/settings/OneAccountSettings" options={{ headerShown: false }} />
-       <Stack.Screen name="/settings/Showprivkey" options={{ headerShown: false }} />
-       <Stack.Screen name="/settings/ShowPhrase" options={{ headerShown: false }} />
+       <Stack.Screen name="settings/About" options={{
+          headerShown: true,
+          headerBackTitleVisible: false, // Hides the "back" text
+          headerTitle: '', // Removes the title text
+          headerTransparent: true, // Makes the header transparent
+          headerTintColor: 'black', // The arrow colord
+       }} />
+       <Stack.Screen name="settings/Activenetwork" options={{ 
+          headerShown: true,
+          headerBackTitleVisible: false, // Hides the "back" text
+          headerTitle: '', // Removes the title text
+          headerTransparent: true, // Makes the header transparent
+          headerTintColor: 'black', // The arrow color
+       }} />
+       <Stack.Screen name="settings/ManageAccount" options={{ 
+          headerShown: true,
+          headerBackTitleVisible: false, // Hides the "back" text
+          headerTitle: '', // Removes the title text
+          headerTransparent: true, // Makes the header transparent
+          headerTintColor: 'black', // The arrow color
+        }} />
+       <Stack.Screen name="settings/OneAccountSettings" options={{
+          headerShown: true,
+          headerBackTitleVisible: false, // Hides the "back" text
+          headerTitle: '', // Removes the title text
+          headerTransparent: true, // Makes the header transparent
+          headerTintColor: 'black', // The arrow color
+       }} />
+       <Stack.Screen name="settings/Showprivkey" options={{ 
+          headerShown: true,
+          headerBackTitleVisible: false, // Hides the "back" text
+          headerTitle: '', // Removes the title text
+          headerTransparent: true, // Makes the header transparent
+          headerTintColor: 'black', // The arrow color
+        }} />
+       <Stack.Screen name="settings/ShowPhrase" options={{ 
+          headerShown: true,
+          headerBackTitleVisible: false, // Hides the "back" text
+          headerTitle: '', // Removes the title text
+          headerTransparent: true, // Makes the header transparent
+          headerTintColor: 'black', // The arrow color
+        }} />
 
     </Stack>
     </ImageBackground>

@@ -5,15 +5,17 @@ import { View, Text, StyleSheet, TextStyle, ViewStyle, Switch } from 'react-nati
 import React, { useEffect, useState } from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { windowWidth } from '@/constants/Dimenstions';
+import { FunctionTypeNode } from 'typescript';
 
 
 export type mnemoicprop = {
     mnemonic: string , 
-    menmonicbottom ?: boolean  
+    menmonicbottom ?: boolean   ,
+    onContinue ?:  () => void;   
 }
 
 export function Mnemonicbox(props: mnemoicprop) {
-    const { mnemonic , menmonicbottom  } = props;
+    const { mnemonic , menmonicbottom  , onContinue  } = props;
     // const [mnemonicarr, setmnemonicarr] = useState<string[]>([]);
     const mnemonicarrr: string[] = mnemonic.split(" ");
     const [isChecked, setIsChecked] = useState(false);
@@ -84,7 +86,7 @@ export function Mnemonicbox(props: mnemoicprop) {
                                 I saved my Secret Recovery Phrase
                             </Text>
                         </View>
-                        <TouchableOpacity style={$Continuebutton}>
+                        <TouchableOpacity disabled={!isChecked} style={$Continuebutton} onPress={onContinue}>
                             <Text style={{
                                 fontSize: 16,
                                 fontWeight: '400',
@@ -125,14 +127,15 @@ const styles = StyleSheet.create({
     },
     mnemonicbox: {
         // display : 'flex' , 
-        width: '100%',
+        width: '98%',
         flexDirection: 'row',
         backgroundColor: '#171717',
         justifyContent: 'space-between', // Distributes space between the boxes
         padding: 10,
         flexWrap: 'wrap',
         gap: 10,
-        borderRadius: 10
+        borderRadius: 10 ,
+        
     },
     mnemonictextbox: {
         backgroundColor: 'black',

@@ -26,6 +26,7 @@ export default function OneAccountSettings() {
                     padding: 0,
                     // backgroundColor : 'red', 
                     width: windowWidth,
+                    marginTop : 70
                 }}>
 
 

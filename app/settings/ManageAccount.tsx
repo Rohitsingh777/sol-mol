@@ -27,7 +27,8 @@ export default function ManageAccount() {
         overflow: 'hidden' , 
         padding : 0 , 
         // backgroundColor : 'red', 
-        width : windowWidth , 
+        width : windowWidth ,
+        paddingTop : 50 
       }}>
 
     

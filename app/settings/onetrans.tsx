@@ -1,4 +1,5 @@
 
+
 import { View, Text, TextStyle, Button, ViewStyle } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { windowWidth } from '@/constants/Dimenstions'
@@ -11,7 +12,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Copy } from 'lucide-react-native'
 import copytoclipboar from '@/hooks/copytext'
 
-export default function ShowPhrase() {
+export default function Onetrans() {
     const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
     const [menmonic, setmnemonic] = useState<string | null>('')
     
@@ -27,7 +28,6 @@ export default function ShowPhrase() {
     }, [])
     return (
         <ImageBackgroundWrapper image={image}>
-
             <SafeAreaView style={styles.container}>
 
                 <View style={{
@@ -41,7 +41,7 @@ export default function ShowPhrase() {
                     padding: 20
                 }}>
                     <Text style={$heading}> Your Mneumonic </Text>
-                    <Mnemonicbox mnemonic={menmonic!} />
+                    <Mnemonicbox mnemonic={menmonic! } />
                     <TouchableOpacity style={$copybox} onPress={() => {
                         copytoclipboar(menmonic!)
                     }}>

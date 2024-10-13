@@ -12,8 +12,7 @@ export type transaction = {
 
 export type transactions = transaction[];
 
-const endpoint =
-  "https://solana-devnet.g.alchemy.com/v2/nk304O7Mf4G87YvTcHbf-gXPM-9Pu2g0"; // Solana JSON-RPC endpoin
+const endpoint = "https://solana-mainnet.g.alchemy.com/v2/nk304O7Mf4G87YvTcHbf-gXPM-9Pu2g0"; // Solana JSON-RPC endpoin
 const solanaConnection = new solanaWeb3.Connection(endpoint);
 
 export const getSolTransactions = async (

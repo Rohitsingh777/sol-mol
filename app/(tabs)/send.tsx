@@ -6,12 +6,14 @@ import { BarCodeScanner } from 'expo-barcode-scanner';
 import ImageBackgroundWrapper from '@/components/Imagewrapper';
 import { useNavigation, useRouter } from 'expo-router';
 import { CameraView, Camera } from "expo-camera";
+import { useRecoilState } from 'recoil';
+import { receiverspublickey } from '@/store/receiverspubkey';
 
 export default function Readqr() {
 
   const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
   const router = useRouter();
-
+  const [publickey , setpublickey ] = useRecoilState(receiverspublickey) ; 
   const [hasPermission, setHasPermission] = useState<Boolean | null>(null);
   const [scanned, setScanned] = useState(false);
 
@@ -35,6 +37,8 @@ export default function Readqr() {
   const handleBarcodeScanned = ({ type, data }) => {
     setScanned(true);
     alert(`Bar code with type ${type} and data ${data} has been scanned!`);
+    setpublickey(data.toString()) ; 
+    router.push('/sendviaid') ; 
 
   };
 

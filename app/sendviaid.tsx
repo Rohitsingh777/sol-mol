@@ -8,7 +8,7 @@ import { useRecoilState } from 'recoil';
 import { cryptoKeysAtom } from '@/store/publickeys';
 import * as SecureStore from 'expo-secure-store';
 import { sendEth, sendSol } from '@/hooks/sendsoldev';
-import { useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import Pickchain from '@/components/Pickchain';
 import { receiverspublickey } from '@/store/receiverspubkey';
 import { chainState } from '@/store/chain';
@@ -18,7 +18,7 @@ import UseToast from '@/components/Toaster';
 
 
 export default function SendviapubId() {
-
+    // const { Pubkey } = useLocalSearchParams();
     const image = require('../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
     const [cryptokeys, setcryptokeys] = useRecoilState(cryptoKeysAtom)
     // const [chain, setchain] = useState<string>("SOL");

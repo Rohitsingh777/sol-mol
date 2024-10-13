@@ -2,8 +2,6 @@
 
 import { Keypair, Connection, clusterApiUrl, LAMPORTS_PER_SOL, Transaction, SystemProgram, PublicKey } from '@solana/web3.js';
 import * as ethers from 'ethers';
-import { err } from 'react-native-svg';
-import Toast from 'react-native-toast-message';
 
 // Function to convert hex string to Uint8Array
 const hexToUint8Array = (hex: string): Uint8Array => {
@@ -23,7 +21,7 @@ export const sendSol = async (
     const fromKeypair: Keypair = Keypair.fromSecretKey(fromSecretKey);
 
     // Establish connection to the Solana devnet
-    const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
+    const connection = new Connection(clusterApiUrl('mainnet-beta'), 'confirmed');
 
     // The public key of the receiver (public address)
     const toPublicKeyAddress: PublicKey = new PublicKey(toPublicKey);
@@ -65,8 +63,10 @@ export const sendEth =  async (
     amountInEth: string       
 )  => {
 
+  // const endpoint = "https://solana-mainnet.g.alchemy.com/v2/nk304O7Mf4G87YvTcHbf-gXPM-9Pu2g0"; // Solana JSON-RPC endpoin
+
 // Connect to Ganache running on localhost:8545
-const provider = new ethers.JsonRpcProvider('http://localhost:8545');
+const provider = new ethers.JsonRpcProvider('https://eth-mainnet.alchemyapi.io/v2/nk304O7Mf4G87YvTcHbf-gXPM-9Pu2g0');
 
 // Replace with one of the pre-funded accounts Ganache provides (from the displayed accounts on launch)
 const senderPrivateKey = fromSecretKey ;
@@ -92,7 +92,7 @@ async function sendTransaction() {
   } catch (error) {
     console.error('Error:', error);
   }
-
 }
+
 sendTransaction() ; 
 }

@@ -41,7 +41,7 @@ export default function ManageAccount() {
      }}>
       {ManageAccountlayout.map((prop ,index ) =>{
         return(
-          <SettingsBox  {...prop}
+          <SettingsBox  {...prop} key={index}
           />
         )
       })}

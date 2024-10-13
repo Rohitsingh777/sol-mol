@@ -15,9 +15,9 @@ export default function TabLayout() {
 
     <Tabs
       screenOptions={{
-        // tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        // tabBarActiveBackgroundColor : 'grey' ,
-        headerShown: false,
+        tabBarActiveTintColor: '#17D24B',
+        tabBarActiveBackgroundColor : 'black' ,
+        headerShown: false ,
         tabBarStyle :{
           // margin : 0, 
           backgroundColor : 'black' ,   

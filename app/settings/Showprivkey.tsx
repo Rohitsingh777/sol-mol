@@ -35,7 +35,7 @@ export default function Showprivkey() {
           overflow: 'hidden',
           // backgroundColor : 'red', 
           width: windowWidth,
-          justifyContent: 'center',
+          // justifyContent: 'center',
           padding: 20
         }}>
           <Text style={$heading}> Your PrivetKeys  </Text>

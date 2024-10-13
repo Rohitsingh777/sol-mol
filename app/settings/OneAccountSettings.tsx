@@ -40,7 +40,7 @@ export default function OneAccountSettings() {
                     }}>
                         {Accountinfolayout1.map((prop, index) => {
                             return (
-                                <SettingsBox {...prop}
+                                <SettingsBox {...prop} key={index}
                                 />
                             )
                         })}

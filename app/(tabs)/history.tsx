@@ -1,7 +1,7 @@
 
 import ImageBackgroundWrapper from '@/components/Imagewrapper'
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, Image, Dimensions, ScrollView, SafeAreaView, RefreshControl, FlatList } from 'react-native';
+import { View, Text, StyleSheet, Image, Dimensions, ScrollView, SafeAreaView, RefreshControl, FlatList, ActivityIndicator } from 'react-native';
 import { useRecoilState } from 'recoil';
 import { cryptoKeysAtom } from '@/store/publickeys';
 import History_onebox from '@/components/historybox';
@@ -12,6 +12,7 @@ import getTransactions from '@/hooks/getTransactions';
 import Notransactions from '@/components/Notransactions';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { router, useRouter } from 'expo-router';
+import { SplineIcon } from 'lucide-react-native';
 
 // Get the window dimensions
 const windowWidth = Dimensions.get('window').width;
@@ -19,10 +20,8 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function Receive() {
   const image = require('../../assets/images/Mainbackground.png'); // Adjust the path according to your folder structure
-  const btcimg = require('../../assets/images/bitcoinicon.png'); // Adjust the path according to your folder structure
   const [cryptokeys, setcryptokeys] = useRecoilState(cryptoKeysAtom)
   const [chain, setchain] = useRecoilState(chainState)
-  const [img, setimg] = useState<string>('../../assets/images/solicon.png')
   const [pubkey, setpubkey] = useState(cryptokeys.sol)
   const [transactions, setTransactions] = useState<transactions>([])
   const [refreshing, setRefreshing] = useState(false);
@@ -52,8 +51,8 @@ export default function Receive() {
 
     const all_trans = await getTransactions(chain.chain, pubkey, 1000)
     setTransactions(all_trans);
-
     setRefreshing(false)
+
   }
 
   useEffect(() => {
@@ -111,8 +110,19 @@ export default function Receive() {
     </View>) :  */}
           {/* ( */}
 
-          {
-            transactions.length > 0 ?
+          {  refreshing ? 
+          (<View style={{
+            flex: 1,
+            // backgroundColor : 'red'
+            opacity :0.4 ,
+            justifyContent : 'center' , 
+            alignItems : 'center' , 
+
+          }}>
+           <ActivityIndicator color='black' size='large' />
+          </View>)
+           : 
+             (transactions.length > 0 ?
               (
                 <FlatList
                   data={transactions}          // Pass your transactions array here
@@ -137,7 +147,8 @@ export default function Receive() {
                 opacity :0.4
               }}>
                 <Notransactions/>
-              </View>)
+              </View>
+              )) 
           }
         </View>
       </SafeAreaView>

@@ -107,7 +107,7 @@ export default function index() {
                 fontSize: 40,
 
               }}>
-                {eth_bal}
+                {sol_bal}
                 </Text>
           </View>
 

@@ -1,6 +1,8 @@
 
 ## Screenshots
 
+<div style="display: flex; justify-content: space-around;">
+
 ### Home Page
 <img src="./Screenshots/HomeScreen.png" alt="Home Page" width="350"/>
 
@@ -21,7 +23,7 @@
 ### Send Via Scanning QR code 
 <img src="./Screenshots/SendviaScanningBarcode.png" alt="SendviaScanningBarcode" width="350"/>
 
-
+</div>
 
 # Welcome to your sol-mol app 👋
 

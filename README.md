@@ -1,20 +1,29 @@
 
 ## Screenshots
 
+## Home And Send
+
+
 <div style="display: flex; justify-content:space-between;">
 
-## Home And Send
 <img src="./Screenshots/HomeScreen.png" alt="Home Page" width="350"/>
 <img src="./Screenshots/SendviaScanningBarcode.png" alt="SendviaScanningBarcode" width="350"/>
+</div>
 
 ## Settings And Trans History
+
+<div style="display: flex; justify-content:space-between;">
+
 <img src="./Screenshots/Setting.png" alt="Setting Page" width="350"/>
 <img src="./Screenshots/History.png" alt="History Page" width="350"/>
+</div>
+
 
 ## Privet keys and Secret Phrase 
+
+<div style="display: flex; justify-content:space-between;">
 <img src="./Screenshots/SecretPhrase.png" alt="SecretPhrase Page" width="350"/>
 <img src="./Screenshots/SeeYourKeys.png" alt="SeeYourKey" width="350"/>
-
 </div>
 
 # Welcome to your sol-mol app 👋

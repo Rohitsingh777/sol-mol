@@ -1,3 +1,28 @@
+
+## Screenshots
+
+### Home Page
+![Home Page](./Screenshots/HomeScreen.png)
+
+### Settings Page
+![Setting Page](./Screenshots/Setting.png)
+
+
+### Transaction History Page
+![Home Page](./Screenshots/History.png)
+
+
+### See Your Secret Phrase
+![Home Page](./Screenshots/SecretPhrase.png)
+
+### See Your Privet Keys
+![Home Page](./Screenshots/SeeYourKeys.png)
+
+### Send Via Scanning QR code 
+![Home Page](./Screenshots/SendviaScanningBarcode.png)
+
+
+
 # Welcome to your sol-mol app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).

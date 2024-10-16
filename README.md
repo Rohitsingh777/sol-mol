@@ -3,24 +3,11 @@
 
 <div style="display: flex; justify-content: space-around;">
 
-### Home Page
 <img src="./Screenshots/HomeScreen.png" alt="Home Page" width="350"/>
-
-### Settings Page
 <img src="./Screenshots/Setting.png" alt="Setting Page" width="350"/>
-
-
-### Transaction History Page
 <img src="./Screenshots/History.png" alt="History Page" width="350"/>
-
-
-### See Your Secret Phrase
 <img src="./Screenshots/SecretPhrase.png" alt="SecretPhrase Page" width="350"/>
-
-### See Your Privet Keys
 <img src="./Screenshots/SeeYourKeys.png" alt="SeeYourKey" width="350"/>
-
-### Send Via Scanning QR code 
 <img src="./Screenshots/SendviaScanningBarcode.png" alt="SendviaScanningBarcode" width="350"/>
 
 </div>

@@ -3,6 +3,7 @@
 
 ### Home Page
 ![Home Page](./Screenshots/HomeScreen.png)
+<img src="./Screenshots/HomeScreen.png" alt="Home Page" width="400"/>
 
 ### Settings Page
 ![Setting Page](./Screenshots/Setting.png)

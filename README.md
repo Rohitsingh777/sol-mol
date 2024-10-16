@@ -2,25 +2,24 @@
 ## Screenshots
 
 ### Home Page
-![Home Page](./Screenshots/HomeScreen.png)
-<img src="./Screenshots/HomeScreen.png" alt="Home Page" width="400"/>
+<img src="./Screenshots/HomeScreen.png" alt="Home Page" width="350"/>
 
 ### Settings Page
-![Setting Page](./Screenshots/Setting.png)
+<img src="./Screenshots/Setting.png" alt="Setting Page" width="350"/>
 
 
 ### Transaction History Page
-![Home Page](./Screenshots/History.png)
+<img src="./Screenshots/History.png" alt="History Page" width="350"/>
 
 
 ### See Your Secret Phrase
-![Home Page](./Screenshots/SecretPhrase.png)
+<img src="./Screenshots/SecretPhrase.png" alt="SecretPhrase Page" width="350"/>
 
 ### See Your Privet Keys
-![Home Page](./Screenshots/SeeYourKeys.png)
+<img src="./Screenshots/SeeYourKeys.png" alt="SeeYourKey" width="350"/>
 
 ### Send Via Scanning QR code 
-![Home Page](./Screenshots/SendviaScanningBarcode.png)
+<img src="./Screenshots/SendviaScanningBarcode.png" alt="SendviaScanningBarcode" width="350"/>
 
 
 

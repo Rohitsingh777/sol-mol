@@ -1,14 +1,19 @@
 
 ## Screenshots
 
-<div style="display: flex; justify-content: space-around;">
+<div style="display: flex; justify-content:space-between;">
 
+## Home And Send
 <img src="./Screenshots/HomeScreen.png" alt="Home Page" width="350"/>
+<img src="./Screenshots/SendviaScanningBarcode.png" alt="SendviaScanningBarcode" width="350"/>
+
+## Settings And Trans History
 <img src="./Screenshots/Setting.png" alt="Setting Page" width="350"/>
 <img src="./Screenshots/History.png" alt="History Page" width="350"/>
+
+## Privet keys and Secret Phrase 
 <img src="./Screenshots/SecretPhrase.png" alt="SecretPhrase Page" width="350"/>
 <img src="./Screenshots/SeeYourKeys.png" alt="SeeYourKey" width="350"/>
-<img src="./Screenshots/SendviaScanningBarcode.png" alt="SendviaScanningBarcode" width="350"/>
 
 </div>
 
